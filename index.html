@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rachele & Gabriele · 22.08.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Root ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --ink:     #1C1B18;
+  --paper:   #FAF8F3;
+  --warm:    #F2EDE3;
+  --sand:    #E4D9C8;
+  --gold:    #B8966A;
+  --gold-lt: #D4B896;
+  --mist:    #8A8479;
+  --fg:      #3A3830;
+  --serif:   'Playfair Display', Georgia, serif;
+  --display: 'DM Serif Display', Georgia, serif;
+  --sans:    'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  background: rgba(250,248,243,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(184,150,106,0.2);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 4rem 4rem 5rem;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-eyebrow::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold-lt);
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-amp {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: var(--mist);
+  display: block;
+  margin: 0.4rem 0;
+}
+.hero-subtitle {
+  font-size: 14px;
+  color: var(--mist);
+  letter-spacing: 0.04em;
+  margin-top: 2rem;
+  line-height: 1.7;
+}
+.hero-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 0.5px solid var(--sand);
+  border-radius: 2px;
+  background: var(--warm);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--fg);
+}
+.hero-date-badge strong {
+  font-weight: 500;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+/* countdown */
+.countdown {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.cd-item { text-align: left; }
+.cd-num {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+}
+.cd-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-top: 3px;
+}
+
+/* hero right: photo placeholder */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #E8DDD0 0%, #C9BAA6 50%, #B5A08A 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.hero-photo-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.35;
+}
+.hero-photo-placeholder span {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(80,65,50,0.5);
+}
+.hero-photo-overlay {
+  position: absolute;
+  bottom: 3rem;
+  left: -2rem;
+  background: var(--paper);
+  border: 0.5px solid var(--sand);
+  padding: 1.25rem 1.75rem;
+  font-size: 13px;
+  color: var(--mist);
+  font-style: italic;
+  font-family: var(--serif);
+  max-width: 260px;
+  line-height: 1.6;
+  box-shadow: 0 8px 32px rgba(60,45,30,0.08);
+}
+.hero-photo-overlay cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.75rem;
+}
+
+/* ── SECTIONS ── */
+.section { padding: 7rem 5rem; max-width: 1100px; margin: 0 auto; }
+.section-sm { padding: 5rem 5rem; max-width: 760px; margin: 0 auto; }
+.section-wide { padding: 7rem 5rem; max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-body {
+  font-size: 15px;
+  color: var(--mist);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+hr.rule {
+  border: none;
+  border-top: 0.5px solid var(--sand);
+  margin: 0;
+}
+
+/* ── CERIMONIA ── */
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--sand);
+  border: 0.5px solid var(--sand);
+  margin-top: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.info-cell {
+  background: var(--paper);
+  padding: 2rem 2.5rem;
+}
+.info-cell .label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.info-cell .val {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.info-cell .val-sub {
+  font-size: 13px;
+  color: var(--mist);
+  margin-top: 0.35rem;
+  line-height: 1.5;
+}
+
+/* ── VIAGGIO ── */
+.viaggio-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+.quote-pull {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--fg);
+  position: relative;
+  padding-left: 2rem;
+}
+.quote-pull::before {
+  content: '\201C';
+  position: absolute;
+  left: 0; top: -0.3rem;
+  font-size: 3rem;
+  color: var(--gold-lt);
+  line-height: 1;
+  font-family: var(--serif);
+}
+.quote-pull cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 1.25rem;
+}
+.tl { display: flex; flex-direction: column; gap: 0; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 1.25rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-left { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+.tl-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.tl-line {
+  width: 0.5px;
+  flex: 1;
+  background: var(--sand);
+  margin-top: 6px;
+}
+.tl-item:last-child .tl-line { display: none; }
+.tl-tag {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.tl-place {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.tl-desc { font-size: 14px; color: var(--mist); line-height: 1.65; }
+
+/* ── REGALO ── */
+.regalo-section { background: var(--warm); }
+.regalo-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 5rem; }
+.regalo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+.regalo-text .section-body { max-width: 100%; }
+
+.iban-card {
+  background: var(--paper);
+  border: 0.5px solid var(--sand);
+  border-radius: 6px;
+  padding: 2.5rem;
+}
+.iban-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 0.75rem;
+}
+.iban-code {
+  font-family: 'Courier New', monospace;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: var(--warm);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  border: 0.5px solid var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.iban-code:hover { border-color: var(--gold-lt); }
+.copy-btn {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.copy-btn:hover { background: var(--fg); }
+.iban-meta { font-size: 13px; color: var(--mist); line-height: 1.7; }
+.iban-meta strong { color: var(--fg); font-weight: 500; }
+.iban-note {
+  margin-top: 1.25rem;
+  font-size: 13px;
+  color: var(--mist);
+  border-top: 0.5px solid var(--sand);
+  padding-top: 1.25rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── MESSAGGI ── */
+.msg-section { padding: 7rem 5rem; max-width: 760px; margin: 0 auto; }
+.msg-form { margin-top: 2.5rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+input[type=text], input[type=email], textarea {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+  border: 0.5px solid var(--sand);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  border-color: var(--gold);
+}
+textarea { height: 130px; resize: vertical; }
+.submit-btn {
+  margin-top: 1rem;
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 1.05rem;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-btn:hover { background: var(--gold); }
+.msg-confirm {
+  display: none;
+  text-align: center;
+  padding: 1.25rem;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(250,248,243,0.5);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.footer-name {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--paper);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.footer-sub {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.footer-links a {
+  color: rgba(250,248,243,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-lt); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.7s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 7rem 1.75rem 2.5rem; }
+  .hero-right { height: 60vw; }
+  .hero-photo-overlay { display: none; }
+  .section, .section-sm, .section-wide, .msg-section { padding: 4rem 1.75rem; }
+  .regalo-inner { padding: 4rem 1.75rem; }
+  .info-row { grid-template-columns: 1fr; }
+  .viaggio-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .regalo-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .countdown { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">R & G</a>
+  <ul class="nav-links">
+    <li><a href="#cerimonia">Cerimonia</a></li>
+    <li><a href="#viaggio">Viaggio</a></li>
+    <li><a href="#regalo">Regalo</a></li>
+    <li><a href="#messaggio">Lascia un ricordo</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">22 agosto 2026</div>
+    <h1 class="hero-title">
+      <em>Rachele</em>
+      <span class="hero-amp">&amp;</span>
+      Gabriele
+    </h1>
+    <p class="hero-subtitle">Si sposano — e poi spariscono<br>tra Giappone e Thailandia.</p>
+    <div class="hero-date-badge">
+      <strong>22.08.26</strong>
+      <span style="width:0.5px;height:1em;background:var(--sand);display:inline-block"></span>
+      Mancano ancora
+    </div>
+    <div class="countdown">
+      <div class="cd-item"><div class="cd-num" id="cd-days">--</div><div class="cd-label">giorni</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">ore</div></div>
+      <div class="cd-item"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">minuti</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Sostituire con: <img src="foto-sposi.jpg" class="hero-photo" alt="Rachele e Gabriele"> -->
+    <div class="hero-photo-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="rgba(80,60,40,0.4)" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <span>La vostra foto qui</span>
+    </div>
+    <div class="hero-photo-overlay">
+      "Ogni grande avventura comincia con un sì."
+      <cite>— R &amp; G</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CERIMONIA -->
+<div class="section" id="cerimonia">
+  <div class="eyebrow">Quando &amp; dove</div>
+  <h2 class="section-title">La <em>cerimonia</em></h2>
+  <p class="section-body">Tutto quello che vi serve sapere per essere con noi il giorno più bello. Non mancate.</p>
+
+  <div class="info-row">
+    <div class="info-cell">
+      <div class="label">Data</div>
+      <div class="val">Sabato<br>22 agosto 2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Orario</div>
+      <div class="val">Ore 16:00</div>
+      <div class="val-sub">Cerimonia · Ricevimento ore 18:30</div>
+    </div>
+    <div class="info-cell">
+      <div class="label">Luogo</div>
+      <div class="val">Nome della location</div>
+      <div class="val-sub">Via dell'Esempio, 1 · Città</div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- VIAGGIO -->
+<div class="section-wide" id="viaggio" style="padding-top:7rem;padding-bottom:7rem;max-width:1100px;margin:0 auto;padding-left:5rem;padding-right:5rem">
+  <div class="eyebrow">Il viaggio di nozze</div>
+  <h2 class="section-title">Giappone &amp; <em>Thailandia</em></h2>
+
+  <div class="viaggio-layout">
+    <div>
+      <div class="quote-pull">
+        Abbiamo sempre sognato di perderci tra i templi di Kyoto e ritrovarci su una spiaggia che non esiste sulle mappe.
+        <cite>Rachele &amp; Gabriele</cite>
+      </div>
+      <p style="font-size:14px;color:var(--mist);line-height:1.8;margin-top:2rem">
+        Questo viaggio è il nostro modo di festeggiare — non solo il matrimonio, ma tutti gli anni passati a sognarlo insieme. Tre settimane, due paesi, mille esperienze che non vediamo l'ora di raccontarvi.
+      </p>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-tag">Giappone · 10 giorni</div>
+          <div class="tl-place">Tokyo → Kyoto → Hiroshima</div>
+          <div class="tl-desc">Quartieri storici, mercati del mattino, treni Shinkansen e qualche ramen a mezzanotte nei vicoli di Shinjuku.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-tag">Thailandia · 10 giorni</div>
+          <div class="tl-place">Bangkok → Chiang Mai → Koh Lanta</div>
+          <div class="tl-desc">Templi dorati, trekking nella foresta nel nord e infine il mare cristallino delle isole del sud.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div>
+          <div class="tl-tag">Il ritorno</div>
+          <div class="tl-place">A casa, cambiati</div>
+          <div class="tl-desc">Con la valigia piena di souvenir che nessuno vorrà e la testa già al prossimo viaggio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- REGALO -->
+<div class="regalo-section" id="regalo">
+  <div class="regalo-inner">
+    <div class="eyebrow">Il regalo</div>
+    <h2 class="section-title">Contribuisci al <em>viaggio</em></h2>
+
+    <div class="regalo-grid">
+      <div class="regalo-text">
+        <p class="section-body" style="max-width:100%">
+          Il regalo più bello che potete farci è aiutarci a vivere questa avventura al massimo. Non abbiamo bisogno di oggetti — abbiamo bisogno di esperienze, di notti in ryokan a Kyoto, di un corso di cucina thai, di un traghetto all'alba verso un'isola senza nome.
+        </p>
+        <p class="section-body" style="max-width:100%;margin-top:1rem">
+          Qualsiasi contributo — grande o piccolo — va direttamente nel fondo "fuggiamo dal matrimonio". Ve ne saremo grati per sempre.
+        </p>
+      </div>
+
+      <div class="iban-card">
+        <div class="iban-label">Bonifico bancario</div>
+        <div class="iban-code" onclick="copyIban(this)" title="Clicca per copiare">
+          <span id="iban-val">IT60 X054 2811 1010 0000 0123 456</span>
+          <button class="copy-btn" id="copy-btn">Copia</button>
+        </div>
+        <div class="iban-meta">
+          <strong>Intestatario:</strong> Rachele Cognome / Gabriele Cognome<br>
+          <strong>Causale:</strong> libera — anche solo un saluto
+        </div>
+        <div class="iban-note">
+          Non vi preoccupate della cifra. Anche solo un pensiero ci fa sorridere.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="rule">
+
+<!-- MESSAGGI -->
+<div class="msg-section" id="messaggio">
+  <div class="eyebrow">Per noi</div>
+  <h2 class="section-title">Lascia un <em>ricordo</em></h2>
+  <p class="section-body" style="max-width:100%">Un pensiero, un augurio, una storia che condividiamo. Lo leggeremo durante il viaggio, magari su un treno in Giappone alle sei di mattina.</p>
+
+  <div class="msg-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Nome</label>
+        <input type="text" id="f-name" placeholder="Il tuo nome">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email (facoltativa)</label>
+        <input type="email" id="f-email" placeholder="per ricevere risposta">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Il tuo messaggio</label>
+      <textarea id="f-msg" placeholder="Scrivi quello che vuoi — niente regole."></textarea>
+    </div>
+    <button class="submit-btn" onclick="sendMsg()">Invia il messaggio</button>
+    <div class="msg-confirm" id="msg-ok">Grazie mille. Lo leggeremo con il cuore pieno.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Rachele &amp; Gabriele</div>
+  <div class="footer-sub">22 agosto 2026</div>
+  <ul class="footer-links">
+    <li><a href="#cerimonia">Cerimonia</a></li>
+    <li><a href="#viaggio">Viaggio</a></li>
+    <li><a href="#regalo">Regalo</a></li>
+    <li><a href="#messaggio">Ricordi</a></li>
+  </ul>
+  <div style="margin-top:2rem;font-size:11px;letter-spacing:0.1em;opacity:0.3">racheleegabriele.it</div>
+</footer>
+
+<script>
+/* Countdown */
+function tick() {
+  const target = new Date('2026-08-22T16:00:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent =
+    document.getElementById('cd-hours').textContent =
+    document.getElementById('cd-mins').textContent = '0';
+    return;
+  }
+  document.getElementById('cd-days').textContent  = Math.floor(diff / 86400000);
+  document.getElementById('cd-hours').textContent = Math.floor((diff % 86400000) / 3600000);
+  document.getElementById('cd-mins').textContent  = Math.floor((diff % 3600000) / 60000);
+}
+tick(); setInterval(tick, 30000);
+
+/* Copy IBAN */
+function copyIban(el) {
+  const text = document.getElementById('iban-val').textContent;
+  navigator.clipboard.writeText(text).catch(() => {});
+  const btn = document.getElementById('copy-btn');
+  btn.textContent = 'Copiato ✓';
+  btn.style.background = '#5a7a5a';
+  setTimeout(() => { btn.textContent = 'Copia'; btn.style.background = ''; }, 2200);
+}
+
+/* Send message */
+function sendMsg() {
+  const n = document.getElementById('f-name').value.trim();
+  const m = document.getElementById('f-msg').value.trim();
+  if (!n || !m) { alert('Inserisci almeno nome e messaggio.'); return; }
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-email').value = '';
+  document.getElementById('f-msg').value = '';
+  const ok = document.getElementById('msg-ok');
+  ok.style.display = 'block';
+  setTimeout(() => ok.style.display = 'none', 5000);
+}
+</script>
+</body>
+</html>
