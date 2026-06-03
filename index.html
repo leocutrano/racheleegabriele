@@ -80,20 +80,16 @@ nav {
   z-index: 2;
 }
 .hero-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--warm);
-  padding: 6rem 3rem 4rem;
   position: relative;
+  overflow: hidden;
+  background: var(--warm);
 }
 .hero-right img {
   width: 100%;
-  max-width: 480px;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
-  border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(40,30,20,0.18);
 }
 .hero-eyebrow {
   font-size: 11px;
@@ -556,8 +552,7 @@ footer {
   .nav-links { display: none; }
   .hero { grid-template-columns: 1fr; }
   .hero-left { padding: 6rem 1.75rem 2rem; }
-  .hero-right { padding: 2rem 1.75rem 4rem; }
-  .hero-right img { max-width: 100%; }
+  .hero-right { height: 75vw; max-height: 500px; }
   .hero-photo-overlay { display: none; }
   .section, .section-sm, .section-wide, .msg-section { padding: 4rem 1.75rem; }
   .regalo-inner { padding: 4rem 1.75rem; }
