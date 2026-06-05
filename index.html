@@ -49,7 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .hero-eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;opacity:0;animation:fadeUp .7s ease .1s forwards}
 .hero-eyebrow::after{content:'';display:block;width:28px;height:0.5px;background:var(--accent-lt)}
 .hero-title{font-size:clamp(2.6rem,4vw,4rem);font-weight:200;line-height:1.05;color:var(--ink);opacity:0;animation:fadeUp .7s ease .25s forwards}
-.hero-title em{font-style:normal;color:var(--accent);font-weight:300}
+.hero-title em{font-style:normal;color:var(--rose);font-weight:300}
 .hero-amp{font-size:clamp(1.1rem,2vw,1.6rem);font-weight:200;color:var(--rose);display:block;margin:.3rem 0}
 .hero-sub{font-size:14px;color:var(--mist);margin-top:1.5rem;line-height:1.8;opacity:0;animation:fadeUp .7s ease .4s forwards}
 .hero-badge{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:.55rem 1.25rem;border:0.5px solid var(--border);border-radius:2px;background:var(--warm);font-size:11px;letter-spacing:.1em;color:var(--mist);opacity:0;animation:fadeUp .7s ease .52s forwards}
@@ -189,11 +189,10 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
   <div class="hero-left">
     <div class="hero-eyebrow">22 agosto 2026</div>
     <h1 class="hero-title">
-      <em>Rachele</em>
+      <span style="color:var(--ink)">Rachele</span>
       <span class="hero-amp">&amp;</span>
-      Gabriele
+      <span style="color:var(--ink)">Gabriele</span>
     </h1>
-    <p class="hero-sub">Si sposano — e poi spariscono<br>tra Giappone e Thailandia.</p>
     <div class="hero-badge">Mancano ancora</div>
     <div class="countdown">
       <div><div class="cd-num" id="cd-days">--</div><div class="cd-lbl">giorni</div></div>
@@ -202,7 +201,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
     </div>
   </div>
   <div class="hero-right">
-    <img src="rgwed.jpg" alt="Rachele e Gabriele">
+    <img src="rgw.jpg" alt="Rachele e Gabriele">
   </div>
 </div>
 
@@ -211,7 +210,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
   <div class="info-cell">
     <div class="ic-lbl">Data</div>
     <div class="ic-val">Sabato 22 agosto 2026</div>
-    <div class="ic-sub">Dress code · Friscu</div>
+    <div class="ic-sub">Dress code · Formal Chic</div>
   </div>
   <div class="info-cell">
     <div class="ic-lbl">Cerimonia · ore 16:00</div>
@@ -245,7 +244,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
     </div>
     <div class="ig-cell">
       <div class="ig-lbl">Dress code</div>
-      <div class="ig-val">Friscu</div>
+      <div class="ig-val">Formal Chic</div>
     </div>
     <div class="ig-cell" style="grid-column:1/-1">
       <div class="ig-lbl">Dove</div>
@@ -262,7 +261,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 <div class="section" id="ricevimento">
   <div class="eyebrow">Il ricevimento</div>
   <h2 class="section-title">Tenuta Baglio <em>Passofondo</em></h2>
-  <p class="section-body">Dopo la cerimonia ci ritroviamo ad Alcamo, nella campagna siciliana, per festeggiare insieme la sera.</p>
+  <p class="section-body">Dopo la cerimonia, i festeggiamenti proseguiranno ad Alcamo, nella splendida atmosfera di Baglio Passofondo.</p>
   <div class="info-grid">
     <div class="ig-cell">
       <div class="ig-lbl">Orario</div>
@@ -291,7 +290,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
   <div class="viaggio-grid">
     <div>
       <div class="quote">
-        Abbiamo sempre sognato di perderci tra i templi di Kyoto e ritrovarci su una spiaggia che non esiste sulle mappe.
+        Oltre il giorno del sì, c'è il viaggio che abbiamo sempre immaginato. Tre settimane per celebrare il nostro matrimonio e l'attesa bellissima che lo ha reso reale.
         <cite>Rachele &amp; Gabriele</cite>
       </div>
       <p class="section-body" style="max-width:100%">Questo viaggio è il nostro modo di festeggiare — non solo il matrimonio, ma tutti gli anni passati a sognarlo insieme. Tre settimane, due paesi, mille esperienze che non vediamo l'ora di raccontarvi.</p>
@@ -309,7 +308,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
         <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div>
           <div class="tl-tag">Thailandia · 10 giorni</div>
-          <div class="tl-place">Bangkok → Chiang Mai → Koh Lanta</div>
+          <div class="tl-place">Bangkok → Koh Samui</div>
           <div class="tl-desc">Templi dorati, trekking nella foresta nel nord e infine il mare cristallino delle isole del sud.</div>
         </div>
       </div>
@@ -318,7 +317,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
         <div>
           <div class="tl-tag">Il ritorno</div>
           <div class="tl-place">A casa, cambiati</div>
-          <div class="tl-desc">Con la valigia piena di souvenir che nessuno vorrà e la testa già al prossimo viaggio.</div>
+          <div class="tl-desc">Di nuovo a casa, con il passaporto già nostalgico e un bagaglio pieno di storie da conservare.</div>
         </div>
       </div>
     </div>
@@ -332,7 +331,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
   <div class="regalo-inner">
     <div class="eyebrow">Il regalo</div>
     <h2 class="section-title">Contribuisci al <em>viaggio</em></h2>
-    <p class="section-body" style="max-width:100%;margin-bottom:2.5rem">Il regalo più bello è aiutarci a vivere questa avventura. Non oggetti — esperienze: notti in ryokan a Kyoto, un corso di cucina thai, un traghetto all'alba verso un'isola senza nome. Qualsiasi contributo va direttamente nel fondo "fuggiamo dal matrimonio".</p>
+    <p class="section-body" style="max-width:100%;margin-bottom:2.5rem">Più che un regalo, vi chiediamo di essere complici della nostra fuga. Potete scegliere di offrirci un'alba su un'isola remota, una cena speziata o una notte sotto le stelle. Il vostro contributo sarà la spinta per il nostro primo grande inizio.</p>
     <div class="regalo-grid">
 
       <!-- IBAN -->
@@ -346,7 +345,6 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
           <strong>Intestatario:</strong> Rachele Cognome / Gabriele Cognome<br>
           <strong>Causale:</strong> libera — anche solo un saluto
         </div>
-        <div class="iban-note">Non vi preoccupate della cifra. Anche solo un pensiero ci fa sorridere.</div>
       </div>
 
       <!-- MESSAGGIO -->
