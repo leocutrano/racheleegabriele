@@ -22,7 +22,7 @@
   --f:'Outfit',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--f);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.65;font-weight:300}
+body{font-family:var(--f);background:var(--paper);color:var(--ink);font-size:18px;line-height:1.7;font-weight:300}
 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;background:rgba(248,248,246,0.93);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--border)}
@@ -44,10 +44,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 /* ── HERO ── */
 .hero{background:var(--surface);display:flex;align-items:center;justify-content:center;gap:clamp(2rem,4vw,5rem);padding:7rem clamp(1.5rem,5vw,5rem) 5rem;min-height:100vh;overflow:hidden}
-.hero-left{display:flex;flex-direction:column;justify-content:center;flex-shrink:0;max-width:480px}
+.hero-left{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;flex-shrink:0;max-width:480px}
 .hero-right{display:flex;align-items:stretch;flex-shrink:0;gap:1rem}
 .hero-right img{display:block;width:clamp(130px,16vw,220px);height:clamp(280px,55vh,520px);object-fit:cover;object-position:top center;border-radius:6px;box-shadow:0 16px 48px rgba(30,36,64,.13)}
-.hero-eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;opacity:0;animation:fadeUp .7s ease .1s forwards}
+.hero-eyebrow{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:0.8rem;opacity:0;animation:fadeUp .7s ease .1s forwards}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:0.5px;background:var(--accent-lt)}
 .hero-eyebrow::after{content:'';display:block;width:28px;height:0.5px;background:var(--accent-lt)}
 .hero-title{font-size:clamp(2.6rem,4vw,4rem);font-weight:200;line-height:1.05;color:var(--ink);opacity:0;animation:fadeUp .7s ease .25s forwards}
 .hero-title em{font-style:normal;color:var(--rose);font-weight:300}
@@ -55,7 +56,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .hero-sub{font-size:14px;color:var(--mist);margin-top:1.5rem;line-height:1.8;opacity:0;animation:fadeUp .7s ease .4s forwards}
 .hero-badge{display:flex;justify-content:center;align-items:center;margin-top:2rem;padding:.55rem 1.25rem;border:0.5px solid var(--border);border-radius:2px;background:var(--warm);font-size:11px;letter-spacing:.1em;color:var(--mist);opacity:0;animation:fadeUp .7s ease .52s forwards}
 .hero-badge strong{font-weight:500;color:var(--night);font-size:13px}
-.countdown{display:flex;gap:2.5rem;margin-top:2rem;opacity:0;animation:fadeUp .7s ease .64s forwards}
+.countdown{display:flex;gap:2.5rem;margin-top:2rem;justify-content:center;opacity:0;animation:fadeUp .7s ease .64s forwards}
 .cd-num{font-size:2.4rem;font-weight:200;color:var(--ink);line-height:1}
 .cd-lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-top:4px}
 
@@ -76,20 +77,20 @@ hr.rule{border:none;border-top:0.5px solid var(--border)}
 .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:400;margin-bottom:.75rem}
 .section-title{font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:200;line-height:1.15;margin-bottom:1rem;color:var(--ink)}
 .section-title em{font-style:normal;color:var(--accent);font-weight:300}
-.section-body{font-size:15px;color:var(--mist);line-height:1.85;max-width:520px}
+.section-body{font-size:16px;color:var(--mist);line-height:1.85;max-width:520px}
 
 /* ── INFO GRID ── */
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:6px;overflow:hidden;margin-top:2.5rem}
 .ig-cell{background:var(--surface);padding:1.75rem 2rem}
 .ig-lbl{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:400;margin-bottom:.6rem}
-.ig-val{font-size:1.05rem;font-weight:400;color:var(--ink);line-height:1.35}
-.ig-sub{font-size:12px;color:var(--mist);margin-top:3px;line-height:1.5}
+.ig-val{font-size:1.15rem;font-weight:400;color:var(--ink);line-height:1.35}
+.ig-sub{font-size:14px;color:var(--mist);margin-top:3px;line-height:1.5}
 .ig-link{font-size:11px;color:var(--accent);text-decoration:none;display:inline-block;margin-top:6px;letter-spacing:.04em;transition:opacity .2s}
 .ig-link:hover{opacity:.7}
 
 /* ── VIAGGIO ── */
 .viaggio-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,4vw,5rem);margin-top:2.5rem;align-items:start}
-.quote{font-size:1.35rem;font-weight:300;line-height:1.6;color:var(--ink);border-left:2px solid var(--accent-lt);padding-left:1.5rem;margin-bottom:1.5rem}
+.quote{font-size:1.35rem;font-weight:300;font-style:italic;line-height:1.6;color:var(--ink);border-left:2px solid var(--accent-lt);padding-left:1.5rem;margin-bottom:1.5rem}
 .quote cite{display:block;font-style:normal;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:1rem;font-weight:400}
 .tl-item{display:grid;grid-template-columns:20px 1fr;gap:1.25rem;padding-bottom:2rem}
 .tl-item:last-child{padding-bottom:0}
@@ -98,8 +99,8 @@ hr.rule{border:none;border-top:0.5px solid var(--border)}
 .tl-line{width:0.5px;flex:1;background:var(--border);margin-top:5px}
 .tl-item:last-child .tl-line{display:none}
 .tl-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:400;margin-bottom:3px}
-.tl-place{font-size:1.05rem;font-weight:400;margin-bottom:4px;color:var(--ink)}
-.tl-desc{font-size:14px;color:var(--mist);line-height:1.7}
+.tl-place{font-size:1.15rem;font-weight:400;margin-bottom:4px;color:var(--ink)}
+.tl-desc{font-size:16px;color:var(--mist);line-height:1.7}
 
 /* ── REGALO ── */
 .regalo-wrap{background:var(--warm)}
@@ -112,19 +113,19 @@ hr.rule{border:none;border-top:0.5px solid var(--border)}
 .iban-code{font-family:'Courier New',monospace;font-size:12px;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
 .copy-btn{font-family:var(--f);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--night);color:#fff;border:none;padding:.4rem .9rem;border-radius:3px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
 .copy-btn:hover{opacity:.8}
-.iban-meta{font-size:13px;color:var(--mist);line-height:1.75}
+.iban-meta{font-size:15px;color:var(--mist);line-height:1.75}
 .iban-meta strong{color:var(--ink);font-weight:400}
 .iban-note{font-size:13px;color:var(--mist);border-top:0.5px solid var(--border);padding-top:1.1rem;margin-top:1.1rem;line-height:1.7;font-style:italic}
 
 /* ── FORM ── */
 .msg-form{display:flex;flex-direction:column;flex:1}
-.msg-desc{font-size:13px;color:var(--mist);line-height:1.75;margin-bottom:1.25rem}
+.msg-desc{font-size:16px;color:var(--mist);line-height:1.75;margin-bottom:1.25rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);font-weight:400}
 input[type=text],input[type=email],textarea{font-family:var(--f);font-size:14px;font-weight:300;color:var(--ink);background:var(--surface);border:0.5px solid var(--border);border-radius:4px;padding:.75rem 1rem;outline:none;transition:border-color .2s;width:100%}
 input[type=text]:focus,input[type=email]:focus,textarea:focus{border-color:var(--accent)}
-textarea{height:160px;resize:vertical;flex:1}
+textarea{height:200px;resize:vertical;flex:1}
 .submit-btn{margin-top:.75rem;width:100%;background:var(--night);color:var(--paper);border:none;padding:.9rem;font-family:var(--f);font-size:12px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;cursor:pointer;transition:opacity .2s}
 .submit-btn:hover{opacity:.85}
 .form-error{font-size:12px;color:#a33;margin-top:.5rem;display:none}
@@ -210,12 +211,12 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 
 <!-- INFO BAR -->
 <div class="info-bar">
-  <div class="info-cell">
+  <div class="info-cell" style="text-align:right">
     <div class="ic-lbl">Data</div>
     <div class="ic-val">Sabato 22 agosto 2026</div>
     <div class="ic-sub">Dress code · Formal Chic</div>
   </div>
-  <div class="info-cell">
+  <div class="info-cell" style="text-align:center">
     <div class="ic-lbl">Cerimonia · ore 16:00</div>
     <div class="ic-val">Chiesa di Maria SS. delle Grazie</div>
     <div class="ic-sub">Piazza Duomo · Terrasini</div>
@@ -235,7 +236,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 <div class="section" id="cerimonia">
   <div class="eyebrow">La cerimonia</div>
   <h2 class="section-title">Chiesa di Maria SS. <em>delle Grazie</em></h2>
-  <p class="section-body">Ci sposiamo nella chiesa madre di Terrasini, nel cuore della piazza del paese. Vi aspettiamo alle 16:00.</p>
+  <p class="section-body" style="max-width:100%;width:100%">Ci sposiamo nella chiesa madre di Terrasini, nel cuore della piazza del paese.<br>Vi aspettiamo alle 16:00.</p>
   <div class="info-grid">
     <div class="ig-cell">
       <div class="ig-lbl">Data</div>
@@ -264,7 +265,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 <div class="section" id="ricevimento">
   <div class="eyebrow">Il ricevimento</div>
   <h2 class="section-title">Tenuta Baglio <em>Passofondo</em></h2>
-  <p class="section-body">Dopo la cerimonia, i festeggiamenti proseguiranno ad Alcamo, nella splendida atmosfera di Baglio Passofondo.</p>
+  <p class="section-body">Dopo la cerimonia, i festeggiamenti proseguiranno ad Alcamo,<br>nella splendida atmosfera di Baglio Passofondo.</p>
   <div class="info-grid">
     <div class="ig-cell">
       <div class="ig-lbl">Orario</div>
@@ -353,7 +354,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
       <!-- MESSAGGIO -->
       <div class="iban-card" id="messaggio">
         <div class="iban-lbl">Lascia un ricordo</div>
-        <p class="msg-desc">Un pensiero, un augurio, una storia. Lo leggeremo durante il viaggio, magari su un treno alle sei di mattina.</p>
+        <p class="msg-desc">Un pensiero, un augurio, una storia. Lo leggeremo durante il viaggio, magari su un treno alle 6 di mattina.</p>
         <div class="msg-form">
           <div class="form-row">
             <div class="form-group">
