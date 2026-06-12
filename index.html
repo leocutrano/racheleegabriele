@@ -428,18 +428,37 @@ function copyIban(){
 }
 
 /* form */
-function sendMsg(){
+async function sendMsg(){
   const n=document.getElementById('f-name').value.trim();
+  const e=document.getElementById('f-email').value.trim();
   const m=document.getElementById('f-msg').value.trim();
   const err=document.getElementById('form-error');
+  const btn=document.querySelector('.submit-btn');
   if(!n||!m){err.style.display='block';return}
   err.style.display='none';
-  document.getElementById('f-name').value='';
-  document.getElementById('f-email').value='';
-  document.getElementById('f-msg').value='';
-  const ok=document.getElementById('msg-ok');
-  ok.style.display='block';
-  setTimeout(()=>ok.style.display='none',5000);
+  btn.disabled=true;btn.textContent='Invio in corso...';
+  try{
+    const res=await fetch('https://formspree.io/f/xojzkkny',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:n,email:e,message:m})
+    });
+    if(res.ok){
+      document.getElementById('f-name').value='';
+      document.getElementById('f-email').value='';
+      document.getElementById('f-msg').value='';
+      const ok=document.getElementById('msg-ok');
+      ok.style.display='block';
+      setTimeout(()=>ok.style.display='none',5000);
+    } else {
+      err.textContent='Qualcosa è andato storto. Riprova.';
+      err.style.display='block';
+    }
+  } catch(ex){
+    err.textContent='Errore di rete. Riprova più tardi.';
+    err.style.display='block';
+  }
+  btn.disabled=false;btn.textContent='Invia';
 }
 </script>
 </body>
