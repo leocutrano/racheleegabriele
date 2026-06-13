@@ -148,20 +148,47 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
   nav{padding:1rem 1.5rem}
   .nav-links{display:none}
   .nav-toggle{display:flex}
+
+  /* hero */
   .hero{flex-direction:column;padding:5.5rem 1.5rem 3rem;gap:2rem;text-align:center;min-height:auto}
   .hero-left{max-width:100%}
   .hero-eyebrow{justify-content:center}
-  .hero-right{gap:0.5rem}
+  .hero-right{gap:0.5rem;justify-content:center}
   .hero-right img{width:130px;height:220px}
   .countdown{justify-content:center}
+
+  /* info bar — tutto centrato su mobile */
   .info-bar{grid-template-columns:1fr}
-  .info-cell{border-right:none;border-bottom:0.5px solid var(--border)}
+  .info-cell{border-right:none;border-bottom:0.5px solid var(--border);text-align:center!important}
   .info-cell:last-child{border-bottom:none}
+  .ic-link{display:block;margin-top:8px}
+
+  /* sezioni */
+  .section{padding:3.5rem 1.5rem}
+  .section-title{font-size:clamp(1.6rem,6vw,2.2rem)}
+  .section-body{font-size:15px}
+
+  /* info grid */
   .info-grid{grid-template-columns:1fr}
   .ig-cell[style*="grid-column"]{grid-column:1!important}
-  .viaggio-grid{grid-template-columns:1fr;gap:2.5rem}
-  .regalo-grid{grid-template-columns:1fr}
+
+  /* viaggio */
+  .viaggio-grid{grid-template-columns:1fr;gap:2rem}
+  .quote{font-size:1.15rem}
+
+  /* regalo — card impilate, padding ridotto */
+  .regalo-inner{padding:3.5rem 1.5rem}
+  .regalo-grid{grid-template-columns:1fr;gap:1.5rem}
+  .iban-card{padding:1.75rem}
+  .iban-code{font-size:11px}
+  .iban-row{flex-wrap:nowrap;gap:0.75rem}
+
+  /* form */
   .form-row{grid-template-columns:1fr}
+  textarea{height:140px}
+
+  /* footer */
+  .footer-links{gap:1rem}
 }
 </style>
 </head>
