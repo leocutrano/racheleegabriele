@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
 <title>Rachele & Gabriele · 22.08.2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
@@ -178,10 +179,11 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 
   /* regalo — card impilate, padding ridotto */
   .regalo-inner{padding:3.5rem 1.5rem}
-  .regalo-grid{grid-template-columns:1fr;gap:1.5rem}
-  .iban-card{padding:1.75rem}
-  .iban-code{font-size:11px}
-  .iban-row{flex-wrap:nowrap;gap:0.75rem}
+  .regalo-grid{grid-template-columns:1fr;gap:1.5rem;align-items:start}
+  .iban-card{padding:1.5rem;width:100%;min-width:0}
+  .iban-row{flex-wrap:nowrap;gap:0.5rem;min-width:0}
+  .iban-code{font-size:10px;letter-spacing:0.02em;overflow:hidden;text-overflow:ellipsis}
+  .copy-btn{font-size:10px;padding:.35rem .6rem;flex-shrink:0}
 
   /* form */
   .form-row{grid-template-columns:1fr}
