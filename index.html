@@ -7,6 +7,8 @@
 <meta property="og:title" content="Rachele & Gabriele · 22.08.2026">
 <meta property="og:description" content="Si sposano il 22 agosto 2026. Scopri tutti i dettagli del grande giorno.">
 <meta property="og:image" content="https://racheleegabriele.it/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://racheleegabriele.it">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -114,6 +116,8 @@ hr.rule{border:none;border-top:0.5px solid var(--border)}
 .regalo-wrap{background:var(--warm)}
 .regalo-inner{max-width:1100px;margin:0 auto;padding:6rem clamp(1.5rem,5vw,5rem)}
 .regalo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:stretch;grid-auto-rows:1fr}
+.iban-left-col{display:flex;flex-direction:column;gap:1.5rem;height:100%}
+.iban-top{flex:1}
 .iban-card{background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:2.25rem;display:flex;flex-direction:column}
 .iban-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:400;margin-bottom:.75rem}
 .iban-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--warm);border:0.5px solid var(--border);border-radius:4px;padding:.9rem 1.1rem;margin-bottom:1.25rem;cursor:pointer;transition:border-color .2s}
@@ -186,8 +190,11 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
 
   /* regalo — card impilate, padding ridotto */
   .regalo-inner{padding:3.5rem 1.5rem}
-  .regalo-grid{grid-template-columns:1fr;gap:1.5rem;align-items:start}
-  .iban-card{padding:1.5rem;width:100%;min-width:0}
+  .regalo-grid{grid-template-columns:1fr;gap:1.5rem;align-items:start;grid-auto-rows:auto}
+  .regalo-grid>div{width:100%}
+  .iban-left-col{height:auto;width:100%}
+  .iban-top{flex:none}
+  .iban-card{padding:1.5rem;width:100%;min-width:0;display:flex;flex-direction:column}
   .iban-row{flex-wrap:nowrap;gap:0.5rem;min-width:0}
   .iban-code{font-size:10px;letter-spacing:0.02em;overflow:hidden;text-overflow:ellipsis}
   .copy-btn{font-size:10px;padding:.35rem .6rem;flex-shrink:0}
@@ -375,8 +382,8 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
     <div class="regalo-grid">
 
       <!-- IBAN -->
-      <div style="display:flex;flex-direction:column;gap:1.5rem;height:100%">
-        <div class="iban-card" style="flex:1">
+      <div class="iban-left-col">
+        <div class="iban-card iban-top">
           <div class="iban-lbl">Bonifico bancario</div>
           <div class="iban-row" onclick="copyIban()" role="button" aria-label="Copia IBAN">
             <span class="iban-code" id="iban-val">IT40B0306234210000003201209</span>
@@ -387,7 +394,7 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
             <strong>Causale:</strong> libera — anche solo un saluto
           </div>
         </div>
-        <div class="iban-card" style="background:var(--warm)">
+        <div class="iban-card" style="background:var(--surface)">
           <div class="iban-lbl">In alternativa</div>
           <div class="iban-meta" style="font-size:16px">È gradito anche il regalo in busta.</div>
         </div>
