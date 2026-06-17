@@ -368,15 +368,21 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
     <div class="regalo-grid">
 
       <!-- IBAN -->
-      <div class="iban-card">
-        <div class="iban-lbl">Bonifico bancario</div>
-        <div class="iban-row" onclick="copyIban()" role="button" aria-label="Copia IBAN">
-          <span class="iban-code" id="iban-val">IT40B0306234210000003201209</span>
-          <button class="copy-btn" id="copy-btn">Copia</button>
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div class="iban-card">
+          <div class="iban-lbl">Bonifico bancario</div>
+          <div class="iban-row" onclick="copyIban()" role="button" aria-label="Copia IBAN">
+            <span class="iban-code" id="iban-val">IT40B0306234210000003201209</span>
+            <button class="copy-btn" id="copy-btn">Copia</button>
+          </div>
+          <div class="iban-meta">
+            <strong>Intestatario:</strong> Rachele Zimbardo / Gabriele Galioto<br>
+            <strong>Causale:</strong> libera — anche solo un saluto
+          </div>
         </div>
-        <div class="iban-meta">
-          <strong>Intestatario:</strong> Rachele Zimbardo / Gabriele Galioto<br>
-          <strong>Causale:</strong> libera — anche solo un saluto
+        <div class="iban-card" style="background:var(--warm)">
+          <div class="iban-lbl">In alternativa</div>
+          <div class="iban-meta" style="font-size:16px">È gradito anche il regalo in busta.</div>
         </div>
       </div>
 
