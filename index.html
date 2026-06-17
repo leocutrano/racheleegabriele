@@ -106,7 +106,7 @@ hr.rule{border:none;border-top:0.5px solid var(--border)}
 /* ── REGALO ── */
 .regalo-wrap{background:var(--warm)}
 .regalo-inner{max-width:1100px;margin:0 auto;padding:6rem clamp(1.5rem,5vw,5rem)}
-.regalo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:stretch}
+.regalo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:stretch;grid-auto-rows:1fr}
 .iban-card{background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:2.25rem;display:flex;flex-direction:column}
 .iban-lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:400;margin-bottom:.75rem}
 .iban-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--warm);border:0.5px solid var(--border);border-radius:4px;padding:.9rem 1.1rem;margin-bottom:1.25rem;cursor:pointer;transition:border-color .2s}
@@ -368,8 +368,8 @@ footer{background:var(--night);color:rgba(248,248,246,.45);text-align:center;pad
     <div class="regalo-grid">
 
       <!-- IBAN -->
-      <div style="display:flex;flex-direction:column;gap:1.5rem">
-        <div class="iban-card">
+      <div style="display:flex;flex-direction:column;gap:1.5rem;height:100%">
+        <div class="iban-card" style="flex:1">
           <div class="iban-lbl">Bonifico bancario</div>
           <div class="iban-row" onclick="copyIban()" role="button" aria-label="Copia IBAN">
             <span class="iban-code" id="iban-val">IT40B0306234210000003201209</span>
